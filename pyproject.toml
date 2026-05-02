@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "codemind"
+version = "0.1.0"
+description = "Local-first semantic search engine for codebases"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+authors = [
+    {name = "CodeMind", email = "hello@codemind.dev"}
+]
+keywords = ["code-search", "semantic-search", "developer-tools", "bm25"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+dependencies = [
+    "typer[all]>=0.12.0",
+    "rich>=13.0.0",
+    "tree-sitter>=0.21.0",
+    "tree-sitter-languages>=1.10.0",
+    "rank-bm25>=0.2.2",
+    "(sqlite-cache @ git+https://github.com/simonw/sqlite-cache.git) @ git+https://github.com/simonw/sqlite-cache.git",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-cov>=4.0.0",
+    "ruff>=0.4.0",
+]
+
+[project.scripts]
+codemind = "codemind.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/codemind-dev/codemind"
+Repository = "https://github.com/codemind-dev/codemind"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
