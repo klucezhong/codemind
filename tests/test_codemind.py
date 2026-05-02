@@ -28,7 +28,6 @@ def test_index_directory():
     assert stats["files"] > 0
     assert stats["chunks"] > 0
     print(f"✓ Indexed {stats['files']} files, {stats['chunks']} chunks OK")
-    return stats
 
 
 def test_search():
