@@ -30,7 +30,6 @@ dependencies = [
     "tree-sitter>=0.21.0",
     "tree-sitter-languages>=1.10.0",
     "rank-bm25>=0.2.2",
-    "(sqlite-cache @ git+https://github.com/simonw/sqlite-cache.git) @ git+https://github.com/simonw/sqlite-cache.git",
 ]
 
 [project.optional-dependencies]
